@@ -125,7 +125,7 @@ function plantTracker() {
   */
 
   function inventory() {
-    const products = []
+    let products = []
 
     return{
       readProducts: () => {
@@ -137,10 +137,10 @@ function plantTracker() {
       },
 
       deleteFromProducts: (del) => {
-        const remove = products.findIndex(del)
+        const remove = products.indexOf(del)
+        console.log(remove)
           products.splice(remove, 1)
-        
-        
+                       
       }
     }
   }
