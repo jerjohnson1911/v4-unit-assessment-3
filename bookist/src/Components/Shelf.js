@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Book from './Book'
 
 
 class Shelf extends Component{
@@ -12,18 +13,22 @@ class Shelf extends Component{
         // let mappedTitles = this.props.shelf.map(row => (row.title)
         //     )
 
+        
         return (
             // <div className='clicked'>
             //     {mappedTitles}
             //     {console.log(mappedTitles)}
             // </div>
 
-            <dl className='test'>
-                {this.props.shelf.map(row => (
-                    <React.Fragment key={row.title}>
-                    </React.Fragment>
+            <div className='test'>
+                {this.props.shelf.map((book,i) => (
+                    <Book 
+                        info={book}
+                        key={i}
+                        // add={this.props.add}
+                    />
                 ))}
-            </dl>
+            </div>
                         
 
                     

@@ -16,9 +16,9 @@ class App extends Component {
       this.addToShelf = this.addToShelf.bind(this)
     }
 
-    addToShelf(title) {
+    addToShelf(book) {
       this.setState({
-        shelf: this.state.shelf.push(title)
+        shelf: [...this.state.shelf, book]
       })
     }
 
@@ -29,8 +29,8 @@ class App extends Component {
      <div className='grid'>
 
       {/* <Header /> */}
-      <BookList add={this.addToShelf} books={this.state.books} />
-      <Shelf shelf = {this.state.shelf}/>
+      <BookList addToShelf={this.addToShelf} books={this.state.books} />
+      <Shelf add={this.addToShelf} shelf={this.state.shelf}/>
      </div>
 
     </div>
